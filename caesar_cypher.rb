@@ -5,11 +5,24 @@ caesar_cypher("What a string!", 5)
 "Bmfy f xywnsl!"
 =end
 
-def caesar_cypher(string, n)
-	plain = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-	#Break String into an array of letters
-	string.split("")
-	#Move the index n amount of places to the left
+alphabet = {}
+i = 1
+#Map letters and numbers into a new Hash
+('a'..'z').each do |letter|
+	alphabet[letter] = i
+	i += 1
+end
 
+def caesar_cypher(string, shift_factor)	
+	#Downcase string
+	string = string.downcase
+	#Break String into an array of letters
+	str_letters = string.split("")
+	#Move the index n amount of places to the left
+	str_letters.each do |letter|
+		if alphabet.key?(letter)
+			str_letters[letter] = alphabet[key - shift_factor]
+		end
+	end
 
 end
