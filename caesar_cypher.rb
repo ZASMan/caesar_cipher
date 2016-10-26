@@ -5,7 +5,7 @@ caesar_cypher("What a string!", 5)
 "Bmfy f xywnsl!"
 =end
 
-alphabet = {}
+alphabet = Hash.new
 i = 1
 #Map letters and numbers into a new Hash
 ('a'..'z').each do |letter|
